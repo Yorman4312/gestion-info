@@ -17,10 +17,10 @@ DATA_FILE = Path(__file__).resolve().parent.parent / 'data' / 'records.json'
 
 
 def ensure_data_file():
-    """Asegura que el directorio y el archivo de datos existan."""
-    DATA_FILE.parent.mkdir(parents=True, exist_ok=True)
-    if not DATA_FILE.exists():
-        DATA_FILE.write_text('[]', encoding='utf-8')
+  """Asegura que el directorio y el archivo de datos existan."""
+  DATA_FILE.parent.mkdir(parents=True, exist_ok=True)
+  if not DATA_FILE.exists():
+    DATA_FILE.write_text('[]', encoding='utf-8')
 
 
 # ---------------------------------- CÓDIGO PRINCIPAL ----------------------------------
@@ -31,18 +31,18 @@ Función para cargar los clientes desde un archivo JSON:
 - El archivo se aloja en /gestion-info/data/records.json
 """
 def load_data():
-    ensure_data_file()
-    try:
-        with open(DATA_FILE, 'r', encoding='utf-8') as file:
-            return json.load(file)
-    except json.JSONDecodeError:
-        print(Fore.RED + Style.BRIGHT + 'Error: El archivo de datos está dañado. Se creará un nuevo archivo.')
-        with open(DATA_FILE, 'w', encoding='utf-8') as file:
-            json.dump([], file, indent=4, ensure_ascii=False)
-        return []
-    except Exception as e:
-        print(Fore.RED + Style.BRIGHT + f'Error al leer los datos: {e}')
-        return []
+  ensure_data_file()
+  try:
+    with open(DATA_FILE, 'r', encoding='utf-8') as file:
+      return json.load(file)
+  except json.JSONDecodeError:
+    print(Fore.RED + Style.BRIGHT + 'Error: El archivo de datos está dañado. Se creará un nuevo archivo.')
+    with open(DATA_FILE, 'w', encoding='utf-8') as file:
+      json.dump([], file, indent=4, ensure_ascii=False)
+    return []
+  except Exception as e:
+    print(Fore.RED + Style.BRIGHT + f'Error al leer los datos: {e}')
+    return []
 
 
 """
@@ -51,9 +51,9 @@ Función para guardar los clientes en el archivo JSON:
 - El archivo se aloja en /gestion-info/data/records.json
 """
 def save_data(data):
-    ensure_data_file()
-    try:
-        with open(DATA_FILE, 'w', encoding='utf-8') as file:
-            json.dump(data, file, indent=4, ensure_ascii=False)
-    except Exception as e:
-        print(Fore.RED + Style.BRIGHT + f'Error al guardar los datos: {e}')
+  ensure_data_file()
+  try:
+    with open(DATA_FILE, 'w', encoding='utf-8') as file:
+      json.dump(data, file, indent=4, ensure_ascii=False)
+  except Exception as e:
+    print(Fore.RED + Style.BRIGHT + f'Error al guardar los datos: {e}')

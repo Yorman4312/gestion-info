@@ -11,32 +11,32 @@ from file import load_data, save_data # Importamos las funciones para cargar y g
 
 # ---------------------------------- MODELO DE DATOS ----------------------------------
 class Customer:
-    """Representa un cliente con sus campos básicos."""
+  """Representa un cliente con sus campos básicos."""
 
-    def __init__(self, id, name, email, phone):
-        self.id = id
-        self.name = name
-        self.email = email
-        self.phone = phone
+  def __init__(self, id, name, email, phone):
+    self.id = id
+    self.name = name
+    self.email = email
+    self.phone = phone
 
-    def to_dict(self):
-        """Convierte el objeto Customer a un diccionario listo para serializar."""
-        return {
-            'id': self.id,
-            'name': self.name,
-            'email': self.email,
-            'phone': self.phone,
-        }
+  def to_dict(self):
+    """Convierte el objeto Customer a un diccionario listo para serializar."""
+    return {
+      'id': self.id,
+      'name': self.name,
+      'email': self.email,
+      'phone': self.phone,
+    }
 
-    @staticmethod
-    def from_dict(data):
-        """Crea un objeto Customer a partir de un diccionario."""
-        return Customer(
-            data.get('id', ''),
-            data.get('name', ''),
-            data.get('email', ''),
-            data.get('phone', ''),
-        )
+  @staticmethod
+  def from_dict(data):
+    """Crea un objeto Customer a partir de un diccionario."""
+    return Customer(
+      data.get('id', ''),
+      data.get('name', ''),
+      data.get('email', ''),
+      data.get('phone', ''),
+    )
 
 
 # ---------------------------------- CARGA INICIAL ----------------------------------
@@ -57,12 +57,12 @@ Función para registrar un nuevo cliente:
 - Se guarda la lista de clientes actualizada en el archivo JSON utilizando la función save_data().
 """
 def register_customer(id, name, email, phone):
-    if validate_customer(customers, id, email):
-        new_customer = Customer(id, name, email, phone)
-        customers.append(new_customer)
-        save_data([customer.to_dict() for customer in customers])
-        return True
-    return False
+  if validate_customer(customers, id, email):
+    new_customer = Customer(id, name, email, phone)
+    customers.append(new_customer)
+    save_data([customer.to_dict() for customer in customers])
+    return True
+  return False
 
 
 """
@@ -72,10 +72,10 @@ Función para ver un cliente por ID:
 - Si no se encuentra el cliente, se devuelve None.
 """
 def view_customer(id):
-    for customer in customers:
-        if customer.id == id:
-            return customer
-    return None
+  for customer in customers:
+    if customer.id == id:
+      return customer
+  return None
 
 
 """
@@ -83,4 +83,4 @@ Función para ver todos los clientes:
 - Se devuelve la lista completa de clientes almacenada en la variable global customers.
 """
 def view_all_customers():
-    return customers
+  return customers
