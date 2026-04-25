@@ -1,16 +1,15 @@
 """
 main.py
-Este es el archivo principal.
-Aquí se importan las funciones necesarias para el funcionamiento del programa.
-Se utiliza try-except para manejar errores.
+Este es el archivo principal del sistema de gestión de clientes.
+Contiene el punto de entrada y el bucle principal del programa.
 """
 
 
 # ---------------------------------- IMPORTACIONES ----------------------------------
 from colorama import Fore, Style, Back, init # Para imprimir mensajes en colores
-init(autoreset=True) # Para que los colores se restablezcan automáticamente después de cada impresión
+init(autoreset=True) # Inicializa colorama para restablecer estilos automáticamente
 
-from menu import show_menu, handle_option # Importamos las funciones del archivo menu.py
+from menu import show_menu, handle_option # Importa el menú y la gestión de opciones del usuario
 
 
 # ---------------------------------- CÓDIGO PRINCIPAL ----------------------------------
@@ -27,7 +26,7 @@ def run():
       option = input('Seleccione una opción: ') # Solicitamos al usuario que seleccione una opción
       handle_option(option) # Manejar la opción seleccionada por el usuario
 
-      if option == '4': # Si el usuario selecciona la opción de salir, se muestra un mensaje de despedida y se rompe el bucle
+      if option == '6': # Si el usuario selecciona la opción de salir, se muestra un mensaje de despedida y se rompe el bucle
         print(Fore.BLUE + Style.BRIGHT + '============================================================================================')
         print(Fore.BLUE + Style.BRIGHT + '======================== Gracias por usar el sistema. ¡Hasta luego! ========================')
         print(Fore.BLUE + Style.BRIGHT + '============================================================================================\n')
