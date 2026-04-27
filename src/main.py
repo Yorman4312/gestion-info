@@ -14,7 +14,7 @@ from menu import show_menu, handle_option # Importa el menú y la gestión de op
 
 # ---------------------------------- CÓDIGO PRINCIPAL ----------------------------------
 def run():
-  # Mensaje de bienvenida.ñ
+  # Mensaje de bienvenida.
   print(Fore.BLUE + Style.BRIGHT + '===========================================================================================================')
   print(Fore.BLUE + Style.BRIGHT + '=============================== Bienvenido al Sistema de Gestión de Clientes ==============================')
   print(Fore.BLUE + Style.BRIGHT + '===========================================================================================================\n')
