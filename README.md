@@ -22,8 +22,14 @@ cd gestion-info
 pip install -r requirements.txt
 ```
 
-Las dependencias principales incluyen:
+El archivo `requirements.txt` debe contener las dependencias del proyecto. En este momento, la dependencia principal utilizada es:
 - `colorama`: Para imprimir mensajes en colores en la consola.
+
+Si deseas instalar solo la dependencia usada actualmente sin el archivo vacío, puedes ejecutar:
+
+```bash
+pip install colorama
+```
 
 ## Uso
 
