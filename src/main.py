@@ -26,7 +26,7 @@ def run():
       option = input('Seleccione una opción: ') # Solicitamos al usuario que seleccione una opción
       handle_option(option) # Manejar la opción seleccionada por el usuario
 
-      if option == '6': # Si el usuario selecciona la opción de salir, se muestra un mensaje de despedida y se rompe el bucle
+      if option == '7': # Si el usuario selecciona la opción de salir, se muestra un mensaje de despedida y se rompe el bucle
         print(Fore.BLUE + Style.BRIGHT + '============================================================================================')
         print(Fore.BLUE + Style.BRIGHT + '======================== Gracias por usar el sistema. ¡Hasta luego! ========================')
         print(Fore.BLUE + Style.BRIGHT + '============================================================================================\n')
