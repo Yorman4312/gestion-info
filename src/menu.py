@@ -8,25 +8,29 @@ Proporciona el menú interactivo y redirige las opciones del usuario a la lógic
 from colorama import Fore, Style, Back, init # Para imprimir mensajes en colores
 init(autoreset=True) # Inicializa colorama para restablecer estilos automáticamente
 
+from integration import add_random_customers
 from service import new_customer, search_customer, list_customers, update_customer, delete_customer
 
 
 # ---------------------------------- CÓDIGO PRINCIPAL ----------------------------------
 
+# Muestra el menú principal de la aplicación con las opciones disponibles.
 def show_menu():
   print(Fore.BLUE + Style.BRIGHT + '============================== Menú Principal ==============================')
   print(Fore.BLUE + Style.BRIGHT + '1. Registrar cliente')
-  print(Fore.BLUE + Style.BRIGHT + '2. Buscar cliente')
-  print(Fore.BLUE + Style.BRIGHT + '3. Listar los clientes')
-  print(Fore.BLUE + Style.BRIGHT + '4. Modificar cliente')
-  print(Fore.BLUE + Style.BRIGHT + '5. Eliminar cliente')
-  print(Fore.BLUE + Style.BRIGHT + '6. Salir')
+  print(Fore.BLUE + Style.BRIGHT + '2. Registrar 10 clientes aleatorios')
+  print(Fore.BLUE + Style.BRIGHT + '3. Buscar cliente')
+  print(Fore.BLUE + Style.BRIGHT + '4. Listar los clientes')
+  print(Fore.BLUE + Style.BRIGHT + '5. Modificar cliente')
+  print(Fore.BLUE + Style.BRIGHT + '6. Eliminar cliente')
+  print(Fore.BLUE + Style.BRIGHT + '7. Salir')
   print(Fore.BLUE + Style.BRIGHT + '==========================================================================\n')
 
 
 def handle_option(option):
   """Ejecuta la acción correspondiente según la opción seleccionada."""
-  # Opción 1: Registrar cliente
+
+  # Opción 1: Registrar cliente manualmente.
   if option == '1':
     try:
       print(Fore.BLUE + Style.BRIGHT + '\nRegistrando un nuevo cliente...')
@@ -35,15 +39,28 @@ def handle_option(option):
       email = str(input('Ingrese el email del cliente (ej. maria@example.com): '))
       phone = input('Ingrese el teléfono del cliente (ej. 3001234567): ')
 
-      if new_customer(id, name, email, phone): # Si el registro es exitoso, se muestra un mensaje de éxito
+      if new_customer(id, name, email, phone):
+        # Si la validación es exitosa, se guarda el cliente en JSON.
         print(Fore.GREEN + Style.BRIGHT + 'Cliente registrado exitosamente.\n')
       else:
         print(Fore.RED + Style.BRIGHT + 'Error al registrar el cliente.\n')
     except Exception as e:
       print(Fore.RED + Style.BRIGHT + f'Error al registrar el cliente: {e}\n')
 
-# Opción 2: Buscar cliente por ID o Email
+  # Opción 2: Registrar 10 clientes aleatorios con la función de integración.
   elif option == '2':
+    try:
+      print(Fore.BLUE + Style.BRIGHT + '\nRegistrando 10 clientes aleatorios...')
+      added = add_random_customers(10)
+      if added:
+        print(Fore.GREEN + Style.BRIGHT + f'Se registraron {len(added)} clientes aleatorios correctamente.\n')
+      else:
+        print(Fore.YELLOW + Style.BRIGHT + 'No se pudieron generar clientes aleatorios. Verifique los datos actuales.\n')
+    except Exception as e:
+      print(Fore.RED + Style.BRIGHT + f'Error al generar clientes aleatorios: {e}\n')
+
+  # Opción 3: Buscar cliente por ID o Email.
+  elif option == '3':
     try:
       print(Fore.BLUE + Style.BRIGHT + '\nBuscando cliente por ID o Email...')
       data = input('Ingrese el ID o Email del cliente: ')
@@ -56,8 +73,8 @@ def handle_option(option):
     except Exception as e:
       print(Fore.RED + Style.BRIGHT + f'Error al buscar el cliente: {e}\n')
 
-  # Opción 3: Listar los clientes
-  elif option == '3':
+  # Opción 4: Listar los clientes
+  elif option == '4':
     try:
       print(Fore.BLUE + Style.BRIGHT + '\nMostrando todos los clientes...')
       customers = list_customers()
@@ -70,8 +87,8 @@ def handle_option(option):
     except Exception as e:
       print(Fore.RED + Style.BRIGHT + f'Error al mostrar los clientes: {e}\n')
 
-  # Opción 4: Modificar cliente
-  elif option == '4':
+  # Opción 5: Modificar cliente
+  elif option == '5':
     try:
       print(Fore.BLUE + Style.BRIGHT + '\nModificando un cliente...')
 
@@ -96,8 +113,8 @@ def handle_option(option):
     except Exception as e:
       print(Fore.RED + Style.BRIGHT + f'Error al modificar el cliente: {e}\n')
 
-  # Opción 5: Eliminar cliente
-  elif option == '5':
+  # Opción 6: Eliminar cliente
+  elif option == '6':
     try:
       print(Fore.BLUE + Style.BRIGHT + '\nEliminando un cliente...')
 
@@ -123,8 +140,8 @@ def handle_option(option):
     except Exception as e:
       print(Fore.RED + Style.BRIGHT + f'Error al eliminar el cliente: {e}\n')
 
-  # Opción 6: Salir del programa
-  elif option == '6':
+  # Opción 7: Salir del programa
+  elif option == '7':
     print(Fore.BLUE + Style.BRIGHT + 'Saliendo del programa...\n')
 
   else:

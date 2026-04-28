@@ -10,5 +10,65 @@
         "name": "Emmanuel",
         "email": "ocampo@gmail.com",
         "phone": "9998880077"
+    },
+    {
+        "id": "CVLRHO",
+        "name": "Carlos Rodríguez",
+        "email": "carlos.rodríguez45@example.com",
+        "phone": "3672681244"
+    },
+    {
+        "id": "CY88SK",
+        "name": "Sofía López",
+        "email": "sofía.lópez@example.com",
+        "phone": "3114425408"
+    },
+    {
+        "id": "CPF67O",
+        "name": "Sara García",
+        "email": "sara.garcía7@example.com",
+        "phone": "3215134377"
+    },
+    {
+        "id": "CJBL13",
+        "name": "Sofía Martínez",
+        "email": "sofía.martínez@example.com",
+        "phone": "3435492018"
+    },
+    {
+        "id": "CK7WNA",
+        "name": "Sara Torres",
+        "email": "sara.torres96@example.com",
+        "phone": "3154475969"
+    },
+    {
+        "id": "C1PYEJ",
+        "name": "Pedro Martínez",
+        "email": "pedro.martínez@example.com",
+        "phone": "3464448165"
+    },
+    {
+        "id": "CGHL33",
+        "name": "Javier Torres",
+        "email": "javier.torres@example.com",
+        "phone": "3016452866"
+    },
+    {
+        "id": "CZXKT2",
+        "name": "Luis Torres",
+        "email": "luis.torres@example.com",
+        "phone": "3273239460"
+    },
+    {
+        "id": "CVRQOI",
+        "name": "Carlos García",
+        "email": "carlos.garcía@example.com",
+        "phone": "3517603601"
+    },
+    {
+        "id": "CJ23SE",
+        "name": "María Gómez",
+        "email": "maría.gómez@example.com",
+        "phone": "3037912230"
     }
 ]
