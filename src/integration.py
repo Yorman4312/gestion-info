@@ -10,7 +10,7 @@ import string
 from colorama import Fore, Style, Back, init
 init(autoreset=True)
 
-from service import Customer, customers, new_customer
+from .service import Customer, customers, new_customer
 
 
 # ---------------------------------- GENERACIÓN ALEATORIA ----------------------------------

@@ -9,8 +9,8 @@ Incluye el modelo Customer y las operaciones de persistencia en memoria y JSON.
 from colorama import Fore, Style, Back, init # Para imprimir mensajes en colores
 init(autoreset=True) # Inicializa colorama para restablecer estilos automáticamente
 
-from validate import validate_customer
-from file import load_data, save_data
+from .validate import validate_customer
+from .file import load_data, save_data
 
 
 # ---------------------------------- MODELO DE DATOS ----------------------------------
