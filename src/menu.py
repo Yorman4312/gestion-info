@@ -8,8 +8,8 @@ Proporciona el menú interactivo y redirige las opciones del usuario a la lógic
 from colorama import Fore, Style, Back, init # Para imprimir mensajes en colores
 init(autoreset=True) # Inicializa colorama para restablecer estilos automáticamente
 
-from integration import add_random_customers
-from service import new_customer, search_customer, list_customers, update_customer, delete_customer
+from .integration import add_random_customers
+from .service import new_customer, search_customer, list_customers, update_customer, delete_customer
 
 
 # ---------------------------------- CÓDIGO PRINCIPAL ----------------------------------
