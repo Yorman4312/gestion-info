@@ -9,7 +9,7 @@ Contiene el punto de entrada y el bucle principal del programa.
 from colorama import Fore, Style, Back, init # Para imprimir mensajes en colores
 init(autoreset=True) # Inicializa colorama para restablecer estilos automáticamente
 
-from menu import show_menu, handle_option # Importa el menú y la gestión de opciones del usuario
+from .menu import show_menu, handle_option # Importa el menú y la gestión de opciones del usuario
 
 
 # ---------------------------------- CÓDIGO PRINCIPAL ----------------------------------

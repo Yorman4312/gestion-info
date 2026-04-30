@@ -39,7 +39,13 @@ pip install colorama
 ```bash
 python src/main.py
 ```
+### Ejecutar pruebas
 
+Desde la terminal en la raíz del proyecto, ejecuta:
+
+```bash
+pytest test/tests.py
+```
 ### Funcionalidades
 
 - **Registrar cliente**: Agrega un nuevo cliente con ID, nombre, email y teléfono.
